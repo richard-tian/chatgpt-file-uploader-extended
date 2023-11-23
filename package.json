@@ -10,6 +10,7 @@
   },
   "scripts": {
     "build": "tsc --noEmit && vite build",
+    "build:test": "vite build",
     "build:watch": "__DEV__=true vite build --watch",
     "build:hmr": "rollup --config utils/reload/rollup.config.ts",
     "wss": "node utils/reload/initReloadServer.js",
@@ -24,6 +25,7 @@
     "jszip": "^3.10.1",
     "langchain": "^0.0.153",
     "pdfjs-dist": "^3.10.111",
+    "pnpm": "^8.10.5",
     "postcss": "^8.4.21",
     "postcss-loader": "^7.0.2",
     "react": "18.2.0",

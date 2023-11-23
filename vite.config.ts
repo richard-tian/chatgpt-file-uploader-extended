@@ -39,9 +39,9 @@ export default defineConfig({
   build: {
     outDir,
     /** Can slowDown build speed. */
-    // sourcemap: isDev,
-    minify: isProduction,
-    reportCompressedSize: isProduction,
+    sourcemap: true,
+    minify: false,
+    reportCompressedSize: true,
     rollupOptions: {
       input: {
         content: resolve(pagesDir, "content", "index.ts"),
