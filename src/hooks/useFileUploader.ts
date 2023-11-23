@@ -304,11 +304,10 @@ ${text}`;
   };
 
   const handleFileContent = async (fileContent: string) => {
-    const numChunks = Math.ceil(fileContent.length / chunkSize);
+    const splittedDocuments = await splitToDocuments(fileContent, chunkSize);
+    const numChunks = splittedDocuments.length;
     setTotalParts(numChunks);
     const maxTries = 20; // Set max tries to 20
-
-    const splittedDocuments = await splitToDocuments(fileContent, chunkSize);
 
     async function processChunk(i: number) {
       if (i < numChunks && !isStopRequestedRef.current) {
